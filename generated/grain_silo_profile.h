@@ -1,0 +1,7 @@
+/* AUTO-GENERATED application profile; DO NOT EDIT. */
+#ifndef GRAIN_SILO_PROFILE_H
+#define GRAIN_SILO_PROFILE_H
+#include <stdint.h>
+#define GRAIN_SILO_NODE_MAX 8u
+#define GRAIN_SILO_TEST_NETWORK_ID UINT64_C(0xA5A5A5A5A5A5A5A5)
+#endif

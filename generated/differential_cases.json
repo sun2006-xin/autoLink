@@ -1,0 +1,920 @@
+{
+  "meta": {
+    "source": "spec/autolink_spec.py",
+    "wire_ver": 1
+  },
+  "cases": [
+    {
+      "name": "READ_SAMPLE_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 3,
+          "data": "",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READ_SAMPLE_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 3,
+          "data": "00",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READ_INFO_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 4,
+          "data": "00",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READ_INFO_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 4,
+          "data": "",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READ_INFO_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 4,
+          "data": "0000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "WRITE_CFG_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 6,
+          "data": "020001",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "DIAG_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 8,
+          "data": "a5",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "SLEEP_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 23,
+          "data": "00000000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "SLEEP_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 23,
+          "data": "000000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "SLEEP_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 23,
+          "data": "0000000000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "EVENT_RESERVED_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 26,
+          "data": "",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "EVENT_RESERVED_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 26,
+          "data": "00",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "ASSIGN_valid",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 248,
+          "seq": 1,
+          "func": 17,
+          "data": "010203040506070102030405060708",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "ASSIGN_length_0",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 248,
+          "seq": 2,
+          "func": 17,
+          "data": "0102030405060701020304050607",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "ASSIGN_length_1",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 248,
+          "seq": 2,
+          "func": 17,
+          "data": "01020304050607010203040506070800",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READ_ADDR_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 19,
+          "data": "",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READ_ADDR_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 19,
+          "data": "00",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_PREPARE_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 1,
+          "func": 28,
+          "data": "0102030405060708010300004b00",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_PREPARE_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 28,
+          "data": "0102030405060708010300004b",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_PREPARE_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 28,
+          "data": "0102030405060708010300004b0000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_QUERY_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 1,
+          "func": 28,
+          "data": "01020304050607080303",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_QUERY_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 28,
+          "data": "010203040506070803",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_QUERY_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 2,
+          "func": 28,
+          "data": "0102030405060708030300",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_COMMIT_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 1,
+          "func": 28,
+          "data": "0102030405060708020300004b0000c8",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_COMMIT_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 28,
+          "data": "0102030405060708020300004b0000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "NM_COMMIT_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 28,
+          "data": "0102030405060708020300004b0000c800",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "DISCOVER_valid",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 1,
+          "func": 5,
+          "data": "00000001200102030405060708",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "DISCOVER_length_0",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 5,
+          "data": "000000012001020304050607",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "DISCOVER_length_1",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 5,
+          "data": "0000000120010203040506070800",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "RECONCILE_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 1,
+          "func": 7,
+          "data": "00000001200102030405060708",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "RECONCILE_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 7,
+          "data": "000000012001020304050607",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "RECONCILE_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 7,
+          "data": "0000000120010203040506070800",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "RECOVER_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 1,
+          "func": 30,
+          "data": "0102030405060708010000000120",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "RECOVER_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 30,
+          "data": "01020304050607080100000001",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "RECOVER_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 30,
+          "data": "010203040506070801000000012000",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READDRESS_valid",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 1,
+          "func": 29,
+          "data": "010203040506070102030405060708",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READDRESS_length_0",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 29,
+          "data": "0102030405060701020304050607",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "READDRESS_length_1",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 2,
+          "func": 29,
+          "data": "01020304050607010203040506070800",
+          "now": 0
+        }
+      ]
+    },
+    {
+      "name": "reserved_info",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 10,
+          "data": "02",
+          "now": 0,
+          "func": 4
+        }
+      ]
+    },
+    {
+      "name": "reserved_config",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 11,
+          "data": "05",
+          "now": 0,
+          "func": 6
+        }
+      ]
+    },
+    {
+      "name": "reserved_netop",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 12,
+          "data": "01020304050607087F01",
+          "now": 0,
+          "func": 28
+        }
+      ]
+    },
+    {
+      "name": "write_conflict",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 20,
+          "data": "020001",
+          "now": 0,
+          "func": 6
+        },
+        {
+          "addr": 5,
+          "seq": 20,
+          "data": "020002",
+          "now": 1,
+          "func": 6
+        }
+      ]
+    },
+    {
+      "name": "sleep_conflict",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 21,
+          "data": "00000000",
+          "now": 0,
+          "func": 23
+        },
+        {
+          "addr": 5,
+          "seq": 21,
+          "data": "00000001",
+          "now": 1,
+          "func": 23
+        }
+      ]
+    },
+    {
+      "name": "baud_lifecycle",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 30,
+          "now": 100,
+          "func": 28,
+          "data": "0102030405060708010300004b00"
+        },
+        {
+          "addr": 5,
+          "seq": 31,
+          "now": 110,
+          "func": 28,
+          "data": "01020304050607080303"
+        },
+        {
+          "addr": 0,
+          "seq": 32,
+          "now": 120,
+          "func": 28,
+          "data": "0102030405060708020300004b0000c8"
+        },
+        {
+          "tick": 319
+        },
+        {
+          "tick": 320
+        }
+      ]
+    },
+    {
+      "name": "request_observation_prepare_expiry",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 50,
+          "now": 0,
+          "func": 28,
+          "data": "0102030405060708010300004b00"
+        },
+        {
+          "addr": 5,
+          "seq": 51,
+          "now": 90000,
+          "func": 28,
+          "data": "01020304050607080303"
+        }
+      ]
+    },
+    {
+      "name": "request_observation_candidate_expiry",
+      "profile": "pending",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 52,
+          "data": "",
+          "now": 20000,
+          "func": 19
+        }
+      ]
+    },
+    {
+      "name": "request_observation_candidate_reassign",
+      "profile": "pending",
+      "steps": [
+        {
+          "addr": 248,
+          "seq": 56,
+          "data": "010203040506070102030405060708",
+          "now": 20000,
+          "func": 17
+        }
+      ]
+    },
+    {
+      "name": "request_observation_effect_preemption",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 57,
+          "now": 0,
+          "func": 28,
+          "data": "0102030405060708010300004b00"
+        },
+        {
+          "addr": 0,
+          "seq": 58,
+          "now": 0,
+          "func": 28,
+          "data": "0102030405060708020300004b0000c8"
+        },
+        {
+          "addr": 5,
+          "seq": 59,
+          "data": "",
+          "now": 200,
+          "func": 19
+        },
+        {
+          "addr": 5,
+          "seq": 59,
+          "data": "",
+          "now": 200,
+          "func": 19
+        }
+      ]
+    },
+    {
+      "name": "delayed_external_effect_drain",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 53,
+          "now": 0,
+          "func": 28,
+          "data": "0102030405060708010300004b00"
+        },
+        {
+          "addr": 0,
+          "seq": 54,
+          "now": 0,
+          "func": 28,
+          "data": "0102030405060708020300004b0000c8"
+        },
+        {
+          "addr": 5,
+          "seq": 55,
+          "data": "000003E8",
+          "now": 1,
+          "func": 23
+        },
+        {
+          "tick": 3000
+        },
+        {
+          "tick": 3000
+        }
+      ]
+    },
+    {
+      "name": "recover_foreign",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 40,
+          "data": "1112131415161718010000000120",
+          "now": 0,
+          "func": 30
+        }
+      ]
+    },
+    {
+      "name": "state_eligibility",
+      "profile": "qservice",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 41,
+          "data": "",
+          "now": 0,
+          "func": 3
+        },
+        {
+          "addr": 0,
+          "seq": 42,
+          "now": 1,
+          "func": 30,
+          "data": "0102030405060708010000000120"
+        }
+      ]
+    },
+    {
+      "name": "R5-C1_node_sleep_pre_wrap",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 5,
+          "seq": 77,
+          "func": 23,
+          "data": "00000001",
+          "now": 4294967000
+        },
+        {
+          "tick": 4294967001
+        },
+        {
+          "tick": 1703
+        },
+        {
+          "tick": 1704
+        }
+      ]
+    },
+    {
+      "name": "R5-C2_node_sleep_exact_zero",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 248,
+          "seq": 77,
+          "func": 17,
+          "data": "010203040506070102030405060708",
+          "now": 4294965295
+        },
+        {
+          "addr": 7,
+          "seq": 78,
+          "func": 23,
+          "data": "00000001",
+          "now": 4294965296
+        },
+        {
+          "tick": 4294967295
+        },
+        {
+          "tick": 0
+        }
+      ]
+    },
+    {
+      "name": "R5-C3_node_assign_exact_zero",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 248,
+          "seq": 3,
+          "func": 17,
+          "data": "010203040506070102030405060708",
+          "now": 4294947296
+        },
+        {
+          "tick": 4294967295
+        },
+        {
+          "tick": 0
+        }
+      ]
+    },
+    {
+      "name": "R5-C4_node_prepare_pre_wrap",
+      "profile": "committed",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 4,
+          "func": 28,
+          "data": "0102030405060708010300004b00",
+          "now": 4294967000
+        },
+        {
+          "tick": 4294967001
+        },
+        {
+          "tick": 89703
+        },
+        {
+          "tick": 89704
+        }
+      ]
+    },
+    {
+      "name": "R5-C5_node_registration_exact_zero",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 5,
+          "func": 5,
+          "data": "00000001200102030405060708",
+          "now": 4294956296
+        },
+        {
+          "delivery": 0,
+          "now": 4294957296
+        },
+        {
+          "tick": 4294967295
+        },
+        {
+          "tick": 0
+        }
+      ]
+    },
+    {
+      "name": "R5-C6_node_quarantine_exact_zero",
+      "profile": "unassigned",
+      "steps": [
+        {
+          "addr": 0,
+          "seq": 6,
+          "func": 5,
+          "data": "00000001200102030405060708",
+          "now": 4294951296
+        },
+        {
+          "delivery": 0,
+          "now": 4294952296
+        },
+        {
+          "tick": 4294962296
+        },
+        {
+          "tick": 4294967295
+        },
+        {
+          "tick": 0
+        },
+        {
+          "addr": 0,
+          "seq": 7,
+          "func": 5,
+          "data": "00000001200102030405060708",
+          "now": 1
+        },
+        {
+          "delivery": 1,
+          "now": 2
+        },
+        {
+          "addr": 0,
+          "seq": 8,
+          "func": 5,
+          "data": "00000001200102030405060708",
+          "now": 3
+        },
+        {
+          "delivery": 0,
+          "now": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,651 @@
+{
+  "schema": "autolink-public-api-expanded-inventory-v1",
+  "classification_owner": "GrainSilo-AutoLink-v2.2.0-API-Allowlist.json",
+  "classification_owner_sha256": "16ea003c1d8f355734391d495e174f19c4124de2e288b6f2e3cb665844e1f777",
+  "accepted_semantic_baseline": "76db7e55b42d80f48b9d01c48be5bf72f896e929",
+  "default_export_classification": "INTERNAL / PRIVATE",
+  "headers": [
+    {
+      "path": "libraries/AutoLinkCore/src/autolink_core.h",
+      "sha256": "beac560ac038cae58c7ec6e841409c9cf80bae2dfafd312409e8d3c660b93128"
+    },
+    {
+      "path": "libraries/AutoLinkCore/src/autolink_master.h",
+      "sha256": "12aaa643c8775cebc99c997c090073e4204710d7f73c5b568ea8c97a03cd0ded"
+    },
+    {
+      "path": "libraries/AutoLinkCore/src/autolink_node_engine.h",
+      "sha256": "f3d77c0faf33ae88a4f24d651dd66dcfe5c076492aa04b606c6fe2dea032351b"
+    },
+    {
+      "path": "libraries/AutoLinkCore/src/autolink_persistence.h",
+      "sha256": "23595d0c51a45623c9520fa6a6e10cd3b89486463798818ba93121d3aa6b17f3"
+    },
+    {
+      "path": "libraries/AutoLinkCore/src/autolink_time.h",
+      "sha256": "9b54661e991e9b6a3d0f3e7a79500093058b614e3399822a033988970318e65e"
+    },
+    {
+      "path": "libraries/AutoLinkCore/src/autolink_transport_timing.h",
+      "sha256": "2ed60cacf3f94d4c8a0028f80d7e26e014744c80ec2d001787b1718a46028aff"
+    },
+    {
+      "path": "libraries/AutoLinkCore/src/generated/autolink_semantics.h",
+      "sha256": "74353907b1b22324cd98a4719574bb720d09cdec4f6cb8b1599b27b6e09ade7d"
+    }
+  ],
+  "symbols": [
+    {
+      "symbol": "al_action_kind_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_action_purpose_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_action_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_admin_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_assign_pending",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_baud_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_baud_transaction_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_bus_event_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_candidate_confirmation_eligible",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_clear_commission_atomic",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_commission_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_commit_commission",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_config_request_length",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_data_type_width",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_delivery_outcome_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_device_info_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_durable_operation_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_effect_cache_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_effect_kind_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_enter_quarantine",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_enter_quarantine_at",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_error_allowed",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_find_request_contract",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_is_generic_idempotent",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_is_known_request",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_is_supported_baud",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_is_wire_error",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_journal_commit",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_journal_init",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_journal_load",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_journal_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_baud_next",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_baud_orchestrator_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_baud_recovery_applied",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_baud_start",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_baud_state_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_begin",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_event_kind_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_event_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_export_records",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_export_registry",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_find_addr",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_find_uid",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_init",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_make_assign",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_collect",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_diag",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_discover",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_net_management",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_read_addr",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_read_info",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_read_sample",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_readdress",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_reconcile",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_recover",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_sleep",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_make_write_config",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_mark_bus_baud_unknown",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_next_transmission",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_next_tx_result_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_next_work",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_node_record_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_node_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_on_persist_result",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_on_tx_complete",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_on_tx_complete_timestamp",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_on_tx_complete_us",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_payload_kind_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_persist_kind_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_platform_status",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_platform_status_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_receive_at",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_receive_at_timestamp",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_receive_at_us",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_registry_export_result_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_registry_snapshot_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_restore_bus_baud",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_restore_records",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_sleep_state_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_sleep_verify_result_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_stage_registry_persistence",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_take_registry_dirty",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_tick",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_tick_us",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_time_after",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_time_ms_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_time_reached",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_transaction_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_tx_authorized",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_master_tx_state_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_master_work_kind_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_network_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_action_effect_is_due",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_application_port_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_complete",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_engine_advance",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_config_get",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_engine_effect_is_due",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_enter_quarantine",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_engine_execute",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_init",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_on_delivery",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_platform_status",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_restore",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_set_application_port",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_sync_schema",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_engine_tick",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_execute",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_init",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_invariants",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_on_delivery_at",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_platform_status_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_node_prepare",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_snapshot_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_state_allowed",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_tick",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_time_elapsed_ms",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_time_projection_after",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_timer_cancel",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_timer_due_tick",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_timer_expired",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_timer_start",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_timer_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_timer_valid",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_node_wake",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_on_own_network_activity",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_persistent_record_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_power_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_quarantine_expire",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_record_valid",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_request_contract_count",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_request_contract_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_request_contracts",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_request_length_allowed",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_request_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_response_contract_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_response_contracts",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_response_func_allowed",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_response_payload_allowed",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_service_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_storage_port_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_supported_baud_at",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_supported_baud_count",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_time_us_t",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_transaction_plan_t",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_transport_meets_bound",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_transport_pair_meets_relative_bound",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_transport_target_due",
+      "classification": "INTERNAL / PRIVATE"
+    },
+    {
+      "symbol": "al_transport_timestamp",
+      "classification": "PUBLIC / SUPPORTED"
+    },
+    {
+      "symbol": "al_transport_timestamp_t",
+      "classification": "PUBLIC / SUPPORTED"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "name": "AutoLink V2.2 SC2 Root-Cause Closure Candidate",
+    "wire_ver": 1,
+    "proto_ver": 512,
+    "status": "NON-NORMATIVE / NO-FREEZE",
+    "wire_change": false
+  },
+  "frame": {
+    "head_len": 5,
+    "crc_len": 2,
+    "max_data": 247,
+    "max_frame": 254,
+    "uid_len": 6,
+    "net_id_len": 8,
+    "seed_len": 4,
+    "byte_order": "big",
+    "crc_order": "little"
+  },
+  "addresses": {
+    "BROADCAST": 0,
+    "MIN": 1,
+    "MAX": 239,
+    "SYSTEM": 240,
+    "UNASSIGNED": 248,
+    "RESERVED": 249,
+    "INVALID": 255
+  },
+  "functions": {
+    "READ_SAMPLE": 3,
+    "READ_INFO": 4,
+    "DISCOVER": 5,
+    "WRITE_CFG": 6,
+    "RECONCILE": 7,
+    "DIAG": 8,
+    "REPORT": 16,
+    "ASSIGN": 17,
+    "REG_CONFIRM": 18,
+    "READ_ADDR": 19,
+    "SLEEP": 23,
+    "EVENT_RESERVED": 26,
+    "NET_MGMT": 28,
+    "READDRESS": 29,
+    "RECOVER": 30,
+    "ERR_BASE": 128
+  },
+  "report_types": {
+    "REGISTER": 1,
+    "RECONCILE": 2,
+    "RECOVER": 3
+  },
+  "net_ops": {
+    "PREPARE": 1,
+    "COMMIT": 2,
+    "QUERY": 3
+  },
+  "wire_errors": {
+    "ILLEGAL_FUNC": 1,
+    "BAD_PAYLOAD_LEN": 2,
+    "INVALID_VALUE": 3,
+    "SENSOR": 4,
+    "BUSY": 5,
+    "PROTO_FEATURE": 7,
+    "NET_ID": 8,
+    "TXN_CONFLICT": 9,
+    "PERSIST_FAILED": 10
+  },
+  "info_sub": {
+    "BASE": 0,
+    "CHDESC": 1
+  },
+  "sensor_types": {
+    "GENERIC": 0,
+    "SHT31": 1
+  },
+  "capabilities": {
+    "CONFIGURABLE": 1,
+    "SLEEP": 4,
+    "DIAGNOSTIC": 32
+  },
+  "data_types": {
+    "INT16": 1,
+    "UINT16": 2,
+    "UINT32": 3
+  },
+  "units": {
+    "CELSIUS": 1,
+    "RH": 2,
+    "PPM": 3,
+    "PCT": 4,
+    "METER": 5,
+    "VOLT": 6,
+    "MA": 7
+  },
+  "descriptor": {
+    "TLV_CHANNEL": 1,
+    "FLAG_RO": 1
+  }
+}
