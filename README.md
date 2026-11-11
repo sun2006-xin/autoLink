@@ -1,12 +1,26 @@
-# AutoLink v2.2.0
+<p align="center">
+  <img src="assets/01-hero.png" alt="AutoLink v2.2.0 RS-485 网络概念图" width="100%">
+</p>
 
-AutoLink 是面向嵌入式设备的**单主站、多节点、半双工 RS-485 通信协议栈**。它负责让新节点加入网络、给节点分配地址、按地址读写数据，并处理重复请求、节点重启、持久化、休眠及波特率切换。协议核心使用可移植 C，串口、RS-485 收发方向、时钟和非易失存储由目标设备接入。
+<h1 align="center">AutoLink 嵌入式通信协议栈</h1>
+<p align="center"><strong>AutoLink v2.2.0 · RS-485 Protocol Stack</strong></p>
+<p align="center">节点自动接入 · 可靠事务 · 断电恢复 · 可移植 C 核心</p>
+<p align="center">
+  <img alt="Transport: RS-485" src="https://img.shields.io/badge/Transport-RS--485-166A86?style=flat-square">
+  <img alt="Topology: one master, multiple nodes" src="https://img.shields.io/badge/Topology-Master%20%2B%20Nodes-246B78?style=flat-square">
+  <img alt="Core: portable C" src="https://img.shields.io/badge/Core-Portable%20C-397A72?style=flat-square">
+  <img alt="Discovery: deterministic slots" src="https://img.shields.io/badge/Discovery-Deterministic%20Slots-367691?style=flat-square">
+  <img alt="Integration: ESP32 example" src="https://img.shields.io/badge/Example-ESP32-596F8F?style=flat-square">
+  <img alt="License: Apache-2.0" src="https://img.shields.io/badge/License-Apache--2.0-39836C?style=flat-square">
+</p>
 
-项目提供协议规范、C 实现、Python 语义参考、生成的契约和主机端验证工具。GrainSilo 粮仓探杆是一个实际集成案例，使用 ESP32-S3 作主站、ESP32-C3 作测量节点。AutoLink 管通信，温湿度测量和预测属于应用层。
+> AutoLink 提供协议规范、可移植 C 实现与集成指南。[GrainSilo 粮仓探杆](https://github.com/sun2006-xin/grainsilo)是 ESP32-S3 主站与 ESP32-C3 测量节点的应用实例。图片展示的是网络概念；帧字段、接口和状态转换以源码与协议规范为准。
 
-![AutoLink v2.2.0 RS-485 网络概念图](assets/01-hero.png)
+## 项目简介
 
-图片用于说明设计。总线帧、接口和状态转换以源码与协议规范为准；硬件为概念图。
+AutoLink 是面向嵌入式设备的**单主站、多节点、半双工 RS-485 通信协议栈**。它负责新节点发现、逻辑地址分配、按地址读写、重复请求处理，以及节点重启、持久化、休眠与波特率恢复。协议核心使用可移植 C，串口、收发方向、时钟和非易失存储由目标设备接入。
+
+仓库包含协议规范、C 实现、Python 语义参考、生成的契约和主机端验证工具。AutoLink 管通信，传感器测量与温湿度预测由应用实现。
 
 ## 快速上手
 
