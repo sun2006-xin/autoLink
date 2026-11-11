@@ -1,0 +1,194 @@
+{
+  "schema": "autolink-public-integration-api-v1",
+  "planned_version": "v2.2.0",
+  "accepted_semantic_baseline": "76db7e55b42d80f48b9d01c48be5bf72f896e929",
+  "stability_scope": "controlled source-level compatibility for AutoLink v2.2.x and the pinned GrainSilo baseline",
+  "abi_stability_promised": false,
+  "classifications": [
+    "PUBLIC / SUPPORTED",
+    "INTERNAL / PRIVATE",
+    "TEST-ONLY",
+    "EXPERIMENTAL"
+  ],
+  "default_export_classification": "INTERNAL / PRIVATE",
+  "production_roots": [
+    "node",
+    "master",
+    "station"
+  ],
+  "source_suffixes": [
+    ".c",
+    ".cc",
+    ".cpp",
+    ".cxx",
+    ".h",
+    ".hpp",
+    ".ino"
+  ],
+  "public_headers": [
+    "libraries/AutoLinkCore/src/autolink_core.h",
+    "libraries/AutoLinkCore/src/autolink_master.h",
+    "libraries/AutoLinkCore/src/autolink_node_engine.h",
+    "libraries/AutoLinkCore/src/autolink_persistence.h",
+    "libraries/AutoLinkCore/src/autolink_time.h",
+    "libraries/AutoLinkCore/src/autolink_transport_timing.h",
+    "libraries/AutoLinkCore/src/generated/autolink_semantics.h"
+  ],
+  "protected_state_types": [
+    {
+      "type": "al_node_engine_t",
+      "member_policy": "INTERNAL / PRIVATE",
+      "production_member_access": "FORBIDDEN"
+    },
+    {
+      "type": "al_master_t",
+      "member_policy": "INTERNAL / PRIVATE",
+      "production_member_access": "FORBIDDEN"
+    }
+  ],
+  "contract_groups": [
+    {
+      "id": "node-engine-integration",
+      "classification": "PUBLIC / SUPPORTED",
+      "symbols": [
+        "al_action_kind_t",
+        "al_action_t",
+        "al_delivery_outcome_t",
+        "al_device_info_t",
+        "al_effect_kind_t",
+        "al_node_application_port_t",
+        "al_node_engine_advance",
+        "al_node_engine_effect_is_due",
+        "al_node_engine_execute",
+        "al_node_engine_init",
+        "al_node_engine_on_delivery",
+        "al_node_engine_platform_status",
+        "al_node_engine_restore",
+        "al_node_engine_set_application_port",
+        "al_node_engine_sync_schema",
+        "al_node_engine_t",
+        "al_node_platform_status_t",
+        "al_request_t"
+      ],
+      "semantic_owner": "AutoLinkNodeEngine and the existing Node Core transition owners",
+      "purpose": "initialize/restore a statically allocated NodeEngine, execute requests, advance time, publish only due effects, report delivery, and expose active platform baud",
+      "input_contract": "non-null initialized Engine and function-specific validated request/action/time/application-port inputs",
+      "output_contract": "Core-produced actions or a read-only projection of the authoritative active baud; no internal lifecycle layout is exposed as application state",
+      "lifecycle_assumptions": "initialize, optionally restore, set the application port, then execute/advance; report scheduled delivery outcomes after physical TX",
+      "error_behavior": "boolean false means the documented operation was not accepted; for effect_is_due it always means do not publish the effect",
+      "persistence_implications": "NodeEngine owns journal commits and rollback; the adapter supplies storage callbacks only",
+      "time_assumptions": "request CRC-stop and lifecycle time retain the accepted Round 5/7 domains; the facade does not calculate due state",
+      "stability": "PUBLIC / SUPPORTED for AutoLink v2.2.x and pinned GrainSilo source integration"
+    },
+    {
+      "id": "master-runtime-integration",
+      "classification": "PUBLIC / SUPPORTED",
+      "symbols": [
+        "al_master_baud_recovery_applied",
+        "al_master_event_kind_t",
+        "al_master_event_t",
+        "al_master_init",
+        "al_master_next_transmission",
+        "al_master_next_tx_result_t",
+        "al_master_on_tx_complete_timestamp",
+        "al_master_payload_kind_t",
+        "al_master_platform_status",
+        "al_master_platform_status_t",
+        "al_master_receive_at_timestamp",
+        "al_master_t",
+        "al_master_tick_us",
+        "al_master_time_ms_t",
+        "al_master_tx_authorized"
+      ],
+      "semantic_owner": "AutoLink Master Core transaction, baud, timer, and work-scheduler owners",
+      "purpose": "drive RX/tick/event processing, select the next Core-authorized transmission, validate physical TX ownership, report TX completion, apply baud recovery feedback, and expose active platform baud",
+      "input_contract": "non-null initialized Master plus monotonic timestamp, entropy/slot inputs, and exact Core-produced frames/events as required",
+      "output_contract": "events, platform baud, or INVALID/NONE/READY next-TX decision; READY always represents an already-started transaction",
+      "lifecycle_assumptions": "tick before next_transmission; transmit only an authorized Core-produced frame; report TX CRC-stop before later RX/tick progression",
+      "error_behavior": "INVALID is reserved for invalid next-transmission arguments; NONE means no frame is currently authorized; tx_authorized false means do not transmit",
+      "persistence_implications": "runtime calls may emit PERSIST_REQUIRED but never perform platform storage themselves",
+      "time_assumptions": "Master retains the accepted uint64 monotonic epoch and transport timestamp semantics",
+      "stability": "PUBLIC / SUPPORTED for AutoLink v2.2.x and pinned GrainSilo source integration"
+    },
+    {
+      "id": "master-registry-integration",
+      "classification": "PUBLIC / SUPPORTED",
+      "symbols": [
+        "al_master_export_registry",
+        "al_master_mark_bus_baud_unknown",
+        "al_master_node_record_t",
+        "al_master_on_persist_result",
+        "al_master_registry_export_result_t",
+        "al_master_registry_snapshot_t",
+        "al_master_restore_bus_baud",
+        "al_master_restore_records",
+        "al_master_stage_registry_persistence",
+        "al_master_take_registry_dirty"
+      ],
+      "semantic_owner": "AutoLink Master Core durable registry and persistence transition owner",
+      "purpose": "atomically export durable registry facts/records, restore them at boot, consume persistence edges, and report durable-write outcomes",
+      "input_contract": "initialized Master; export capacity must cover every record and records may be null only for an empty registry",
+      "output_contract": "OK returns a complete snapshot and records; INVALID_ARGUMENT or INSUFFICIENT_CAPACITY leaves all caller outputs unchanged",
+      "lifecycle_assumptions": "restore after init and before runtime scheduling; persist dirty state only after physical bus release; feed the exact write result back once",
+      "error_behavior": "registry export uses an explicit result enum; other boolean persistence operations retain their documented accepted semantics",
+      "persistence_implications": "snapshot contains network ID, current bus baud, baud-known fact, and durable node records only; no boot-local deadline or transaction state",
+      "time_assumptions": "restored sleep state remains relative/conservative; no monotonic timestamp is serialized",
+      "stability": "PUBLIC / SUPPORTED for AutoLink v2.2.x and pinned GrainSilo source integration"
+    },
+    {
+      "id": "journal-port-integration",
+      "classification": "PUBLIC / SUPPORTED",
+      "symbols": [
+        "al_journal_commit",
+        "al_journal_init",
+        "al_journal_load",
+        "al_journal_t",
+        "al_storage_port_t"
+      ],
+      "semantic_owner": "AutoLink journal implementation with platform-owned storage callbacks",
+      "purpose": "provide atomic two-slot persistence through a platform storage port",
+      "input_contract": "valid journal/storage callback objects and bounded payload buffers",
+      "output_contract": "load/commit success is explicit; torn or invalid records are rejected by the journal owner",
+      "lifecycle_assumptions": "initialize before load/commit; callbacks perform only the requested slot operation",
+      "error_behavior": "false means the load or durable commit did not complete",
+      "persistence_implications": "journal generation/slot layout is internal and must not be interpreted by GrainSilo",
+      "time_assumptions": "none",
+      "stability": "PUBLIC / SUPPORTED for AutoLink v2.2.x and pinned GrainSilo source integration"
+    },
+    {
+      "id": "transport-timestamp-integration",
+      "classification": "PUBLIC / SUPPORTED",
+      "symbols": [
+        "al_bus_event_t",
+        "al_time_us_t",
+        "al_transport_timestamp",
+        "al_transport_timestamp_t"
+      ],
+      "semantic_owner": "platform observation with AutoLink transport-time validation",
+      "purpose": "carry observed RX/TX physical timing evidence into the Node/Master APIs",
+      "input_contract": "monotonic microsecond observation, matching event kind, explicit uncertainty and verification flag",
+      "output_contract": "immutable timestamp value; verified=false honestly records unbounded platform evidence",
+      "lifecycle_assumptions": "create at the physical observation point and pass to the corresponding completion/receive call",
+      "error_behavior": "consumers reject an event-kind mismatch; construction itself is total",
+      "persistence_implications": "none; timestamps are boot-local runtime evidence",
+      "time_assumptions": "uint64 microsecond domain retained from the accepted baseline",
+      "stability": "PUBLIC / SUPPORTED for AutoLink v2.2.x and pinned GrainSilo source integration"
+    }
+  ],
+  "test_only_symbols": [],
+  "experimental_symbols": [],
+  "gsproto_dependency": {
+    "classification": "PUBLIC / SUPPORTED",
+    "owner": "frozen GSProto codec/Wire layer",
+    "symbols_used_by_bundled_adapters": [
+      "gs_channel_t",
+      "gs_chdesc_t",
+      "gs_frame_build",
+      "gs_frame_parse",
+      "gs_frame_t",
+      "gs_parse_sample_v22",
+      "gs_put_i16be",
+      "gs_sample_t"
+    ]
+  }
+}

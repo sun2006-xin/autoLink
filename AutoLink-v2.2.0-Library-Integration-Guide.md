@@ -2,7 +2,15 @@
 
 ## Dependency and boundary
 
-Resolve AutoLink from the pinned `v2.2.0` tag using `dependency/AutoLink-v2.2.0.lock`. Do not vendor the full AutoLink development tree into GrainSilo and do not track AutoLink `main`/HEAD. The integration adapter owns platform callbacks only.
+Pin the protocol source to the [v2.2.0 tag](https://github.com/sun2006-xin/autolink/tree/v2.2.0). The integration adapter owns platform callbacks.
+
+## 中文快速上手
+
+1. 下载 v2.2.0 源码。使用 Arduino 时，将 `libraries/AutoLinkCore` 和 `libraries/GSProto` 分别安装到 Arduino 用户库目录。使用其他 C 工具链时，把两个库的 `src` 加入 include 路径，并编译其中的 C 文件，包括生成的语义源。
+2. 接入目标板的 UART 与 RS-485 收发器，并为适配层提供单调时钟和持久化回调。按目标板配置方向控制、总线接线和默认波特率。
+3. **Node** 侧初始化、恢复存储、绑定应用回调并同步传感器描述。收到完整合法帧后调用 `al_node_engine_execute()`，按返回的 action 发送应答或执行适配层操作，并按 API 约定回报发送结果。
+4. **Master** 侧初始化网络身份、恢复节点表和波特率，驱动时钟与收发处理。发送前调用 `al_master_tx_authorized()` 核对具体帧，发送完成后通过 `al_master_on_tx_complete_timestamp()` 报告时间。完整调用顺序见 [公开 API](AutoLink-v2.2.0-Public-Integration-API.md)。
+5. 在电脑上运行 `python tools/run_c_tests.py` 检查核心。需要一套可编译的 ESP32 应用时，使用 [GrainSilo 的 firmware 目录](https://github.com/sun2006-xin/grainsilo/tree/main/firmware)及其随附的库。该项目附带用于采样与监测的集成补丁。
 
 ## API classifications
 
@@ -13,7 +21,7 @@ Resolve AutoLink from the pinned `v2.2.0` tag using `dependency/AutoLink-v2.2.0.
 | `TEST-ONLY` | Verification fixture or test runner surface | Forbidden in production |
 | `EXPERIMENTAL` | Not covered by the v2.2.0 compatibility promise | Forbidden unless a new review authorizes it |
 
-The canonical symbol set is in `GrainSilo-AutoLink-v2.2.0-API-Allowlist.json` (52 symbols). It is the machine source of truth; the Markdown file is the human index.
+The canonical symbol set is in the [machine-readable allowlist](GrainSilo-AutoLink-v2.2.0-API-Allowlist.json). The [public API reference](AutoLink-v2.2.0-Public-Integration-API.md) describes the call order and integration contract.
 
 ## Supported groups
 
@@ -33,4 +41,4 @@ Initialize → optionally restore → install application/storage ports → exec
 
 ## Build assumptions
 
-The adapter is compiled for ESP32-C3 Node and ESP32-S3 Master with Arduino libraries and the pinned AutoLink library path. Hardware compile success is not field validation. See the project plan for the staged validation sequence.
+The GrainSilo application uses Arduino ESP32-C3 as Node and ESP32-S3 as Master. Build options and adapter sources are documented in the [GrainSilo repository](https://github.com/sun2006-xin/grainsilo/tree/main/firmware). Measure physical timing and bus behavior on the target hardware.

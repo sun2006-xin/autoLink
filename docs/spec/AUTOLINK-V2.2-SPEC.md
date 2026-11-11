@@ -1,15 +1,13 @@
 # AutoLink V2.2 Current Protocol Specification
 
-Status: **NON-NORMATIVE / SC2 ROOT-CAUSE CLOSURE ROUND 5 / NO-FREEZE / NO-SC3 / NO v2.2.0 TAG**
+Status: **Implementer reference for the published v2.2.0 software baseline**
 
 Wire compatibility: `VER=0x01`, `PROTO_VER=0x0200`
 
 Declarative source: `spec/autolink_spec.py`
 
-This document contains the current implementer contract only. Review history is
-kept in `docs/history/`; design reasons are kept in `docs/rationale/`. Until the
-SC2 gates and independent review are accepted, this text is not a
-release freeze and MUST NOT be used to create a `v2.2.0` tag.
+This document describes the implementer contract for the software baseline.
+Use it alongside the generated tables and the matching tagged source.
 
 ## 1. Frame
 
